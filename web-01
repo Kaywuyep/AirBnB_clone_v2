@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Connecting to a server using a private key
+# SSH connection using single-character flags
+
+# Server details
+# use 'ip addr' to get server ip linux
+# server_ip="your_server_ip_here" 
+# user="ubuntu"
+# private_key="~/.ssh/school"
+
+ssh -i ~/.ssh/school ubuntu@34.202.234.49
