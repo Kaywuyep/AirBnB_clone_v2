@@ -20,6 +20,7 @@ class State(BaseModel, Base):
                 backref='state',
                 cascade='all, delete, delete-orphan')
     else:
+        name = ""
 
         @property
         def cities(self):
@@ -34,3 +35,7 @@ class State(BaseModel, Base):
                 if city.state_id == self.id:
                     related_cities.append(city)
             return related_cities
+
+    def close(self):
+        """ This method should be implemented if not already present. """
+        pass
