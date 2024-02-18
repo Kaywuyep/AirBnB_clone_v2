@@ -45,8 +45,10 @@ class DBStorage:
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
-        """ query on the current database session (self.__session)
-        all objects depending of the class name"""
+        """
+        query on the current database session (self.__session)
+        all objects depending of the class name
+        """
         d = {}
         if cls is None:
             for c in self.all_classes:
@@ -90,7 +92,6 @@ class DBStorage:
 
     def close(self):
         """
-            Closing the session
+            Closing the working sqlalchemy session
         """
-        self.reload()
         self.__session.close()
